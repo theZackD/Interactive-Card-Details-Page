@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/imask" defer></script>
+  <script src="script.js" defer></script>
+
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution { position: fixed; bottom: 0; text-align: center;}
+  </style>
+</head>
+
+<body>
+
+  <div class="CARD">
+    <div class="left-side">
+      <div class="front">
+        <img class="bluecard frontside" src="images/bg-card-front.png" alt="">
+        <img class="card-logo" src="images/card-logo.svg" alt="">
+        <p id="Serialnum">0000 0000 0000 0000</p>
+        <p id="Fullname">JANE APPLESEED</p>
+        <p id="expdate"><span id="Month">00</span>/<span id="Year">00</span></p>
+      </div>
+
+      <div class="back">
+        <img class="bluecard backside" src="images/bg-card-back.png" alt="">
+        <p id="ECVC">000</p>
+      </div>
+    </div>
+
+
+    <form id="nonvalid" class="right-side nonvalidated" action="#">
+      <div class="namediv">
+        <label for="CardholderName">CARDHOLDER NAME</label>
+        <input id="CardholderName" type="text" placeholder="e.g. Jane Appleseed">
+        <p id="ErrName"></p>
+      </div>
+      <div class="numberdiv">
+        <label for="CardNum">CARD NUMBER</label>
+        <input id="CardNum" type="text" placeholder="e.g. 1234 5678 9123 0000" maxlength="19" minlength="19" onkeyup="MoveToNext(this,'ExpM')">
+        <p id="ErrNumber"></p>
+        <p></p>
+      </div>
+      <div class="xpcvc">
+        <div class="expiry">
+          <label for="ExpDate">EXP. DATE (MM/YY)</label>
+          <input id="ExpM" maxlength="2" type="text" placeholder="MM">
+          <input id="ExpY" maxlength="2" type="text" placeholder="YY">
+          <p id="ErrExp"></p>
+        </div>
+        <div class="cvc">
+          <label for="CVC">CVC</label>
+          <input type="text" placeholder="e.g. 123" id="CVC" maxlength="3">
+          <p id="ErrCVC"></p>
+        </div>
+      </div>
+      <button class="confirmationdiv" type="button">Confirm</button>
+    </form>
+
+
+
+    <div id="Thankucard" class="right-side validated NOSHOW">
+      <img src="images/icon-complete.svg" id="ICON" alt="">
+      <h2>Thank you!</h2>
+      <p id="NOTE">We've added your card details</p>
+      <button type="submit">Continue</button>
+    </div>
+  </div>
+
+  <!-- Completed state start -->
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Zakaria Daoudi</a>.
+  </div>
+</body>
+</html>
