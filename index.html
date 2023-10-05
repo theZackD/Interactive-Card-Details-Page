@@ -53,8 +53,8 @@
       <div class="xpcvc">
         <div class="expiry">
           <label for="ExpDate">EXP. DATE (MM/YY)</label>
-          <input id="ExpM" maxlength="2" type="text" placeholder="MM">
-          <input id="ExpY" maxlength="2" type="text" placeholder="YY">
+          <input id="ExpM" maxlength="2" type="text" placeholder="MM" onkeyup="MoveToNext(this,'ExpY')">
+          <input id="ExpY" maxlength="2" type="text" placeholder="YY" onkeyup="MoveToNext(this,'CVC')">
           <p id="ErrExp"></p>
         </div>
         <div class="cvc">
